@@ -18,6 +18,7 @@ validator.isValid = (input, rules) => {
  * @param input
  * @returns {boolean}
  */
+
 validator.isString = (input) => {
   return typeof input === 'string';
 };
