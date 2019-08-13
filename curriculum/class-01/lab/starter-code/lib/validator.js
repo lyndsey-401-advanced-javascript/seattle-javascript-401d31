@@ -1,13 +1,10 @@
 'use strict';
 
+
 //setting up object that can be pushed out to test folder, can do validator. iot call tests 
 let validator = module.exports = {};
 
 //lthomas - this is the solution code that Vinicio covered in class 13 Aug
-validator.isLessThanTen = (input) => {
-  return input < 10; 
-};
-
 validator.isTypeFunction = (input) => {};
 
 validator.isObjectValid = (data, schema) => {
@@ -23,7 +20,7 @@ validator.isObjectValid = (data, schema) => {
   return true; 
 };
 
-
+//my tests 
 validator.isString = (input) => {
   return typeof input === 'string';
 };
