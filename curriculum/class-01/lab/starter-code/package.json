@@ -13,5 +13,10 @@
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "keywords": []
 }
