@@ -7,7 +7,7 @@ const myFileSystem = new FileSystem();
 
 console.log(__dirname);
 
-
+//promise handler pathway? verify 
 myFileSystem.readFile(`${__dirname}/person.json`) //this is how we call/name the pathway to the file we are trying to read/modify
   .then(personString => { //starts promise chain and hopefully sends the person.json object to the terminal as a string that can be read 
     return personString.toString(); //stringy person.json

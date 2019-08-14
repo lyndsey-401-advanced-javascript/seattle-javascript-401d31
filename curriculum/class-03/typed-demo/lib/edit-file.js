@@ -2,36 +2,23 @@
 
 const util = require('util');
 //util.promisify(fs.readfile) returns promise so you can use .then .catch etc 
-const fs = require('fs');
+const fs = require('fs'); 
 
-
-let iAmSMRT = null;
-
-myFileSystem.readFile(`${__dirname}/person.json`,
-  (error, fileString) => {
+//callbacks
+myFileSystem.readFile(`${__dirname}/person.json`, //path into file
+  (error, personString) => {
     if(error) {
-      console.error('ERROR');
+      console.error('ERROR'); //console error for error handling 
     } else {
-      iAmSMRT = fileString;
-      console.log(fileString);
-      // Make a different call here
-      // This leads to callback hell
-      // call(() => {
-      //   call(() => {
-      //     call(() => {
-      //       call(() => {
-      //         call(() => {
-      //         });
-      //       });
-      //     });
-      //   });
-      // });
+        console.log(personString.toString()); //console for testing 
+      return personString.toString();
     }
   });
 
 
 //hold var for read/modify file 
 
+//promises
 class FileSystem { //creates a class for the FileSystem constructor
     readFile(fileName, callBack) { //readFile takes two params: fileName and callBack, ref'd in index.js
         fs.readFile(fileName, (error, contents) => {
@@ -39,7 +26,7 @@ class FileSystem { //creates a class for the FileSystem constructor
                 callBack(error); //error handling if bad request
             } else {
                 console.log(contents.toString());
-                //TODO: refactor with own string instead of relying on toString 
+                //TODO: refactor with own string instead of relying on toString (stretch)
                 callBack(undefined, contents.toString());
             }
         });
