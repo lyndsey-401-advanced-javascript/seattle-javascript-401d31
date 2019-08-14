@@ -1,23 +1,18 @@
 'use strict';
 
-const FileSystem = require('./lib/edit-file');
+const FileSystem = require('./lib/edit-file.js');
 
 const myFileSystem = new FileSystem();
+//constructor for new FileSystem object 
 
 console.log(__dirname);
 
 
 myFileSystem.readFile(`${__dirname}/person.json`) //this is how we call/name the pathway to the file we are trying to read/modify
-  .then(fileString => { // Vinicio - this stars the promise chain
-    return fileString.toString();
+  .then(personString => { //starts promise chain and hopefully sends the person.json object to the terminal as a string that can be read 
+    return personString.toString(); //stringy person.json
   })
-  .then(message => { // 2
-    console.log(message);
-    //return myFileSystem.readFilePromises(`${__dirname}/quote2.txt`);
-    throw 'ERROR!';
+  .then(personString => {
+    console.log(personString.toString());//console.log for testing 
   })
-  .then(fileString => {
-    console.log(fileString.toString());
-    console.log(message);
-  })
-  .catch(error => console.error(error));
+  .catch(error => console.error(error)); //error handling 
