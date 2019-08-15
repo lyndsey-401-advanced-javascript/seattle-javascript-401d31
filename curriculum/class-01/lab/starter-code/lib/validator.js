@@ -1,5 +1,6 @@
 'use strict';
 
+// Vinicio - this is similar to module.exports = {};, but you are giving it an easier to use name
 let validator = module.exports = {};
 //allows for export to test outside of file
 
@@ -12,7 +13,7 @@ validator.isObjectValid = (data, schema) => {
   //data is going to be an object
   //schema will be an object that has a property called fields 
   //TODO: validate our invariants 
-  Object.keys(schema.fields).forEach(callbackfn:expectedProperty => {
+  Object.keys(schema.fields).forEach(expectedProperty => {
     if (!data.hasOwnProperty(expectedProperty)){
       return false;
     }
