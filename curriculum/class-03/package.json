@@ -1,0 +1,12 @@
+{
+  "name": "class-03",
+  "version": "1.0.0",
+  "description": "## Learning Objectives * understand how synchronous and asynchronous code runs in the Javascript runtime * manage asynchronous data flow using error first callbacks * manage asynchronous data flow using Promises * manage asynchronous data flow using async/await * utilize the asynchronous methods from built-in NodeJS modules * work with raw data using Buffers * test asynchronous code using a BDD testing framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
