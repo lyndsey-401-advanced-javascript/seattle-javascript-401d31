@@ -12,3 +12,6 @@ Rqmnts:
 
 For the purposes of this, I assumed we were meant to be modifying person.json
 
+
+How to write object to .JSON:
+https://gyandeeps.com/json-file-write/

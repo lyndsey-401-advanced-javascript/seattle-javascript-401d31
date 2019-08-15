@@ -30,11 +30,14 @@ class FileSystem { //creates a class for the FileSystem constructor
                 callBack(undefined, contents.toString());
             }
         });
-    }
 
-    readFilePromises(fileName) {
-        //sets up two callbacks, rejection and success -- but how?? 
-        return fsExtra.readFile(fileName);
+    }
+    //not sure what the issue is with this code block? 
+    readFilePromise = util.promisify(fs.readFile);
+    module.exports = exports = (file) => {
+        return readFilePromise(file)
+            .then(contents => contents.toString())
+            .catch(error => error);
     }
 }
 
@@ -42,4 +45,27 @@ class FileSystem { //creates a class for the FileSystem constructor
 module.exports = FileSystem;
 
 
-//json.parse loop thru object and change stringify ...... rinse repeat 
+//to modify json.parse loop thru object and change then stringify iot rinse repeat 
+
+var fs = require("fs");
+var writeObject = {
+    firstName: 'Harry',
+    lastName: 'Potter',
+    hair: {
+        type: 'messy',
+        color: 'black'
+    },
+    favoriteFoods: ['pumpkin juice', 'cauldron cake'],
+    married: true,
+    kids: 3
+};
+
+fs.writeFile("./person.json", JSON.stringify(writeObject), (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    };
+    console.log("Harry Potter must not go back to Hogwarts");
+});
+
+
